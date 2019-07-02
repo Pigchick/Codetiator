@@ -1,2 +1,0 @@
-# Codetiator
-Team Project
