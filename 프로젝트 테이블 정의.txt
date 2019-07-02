@@ -1,0 +1,160 @@
+create table user_list ( --<유저>
+
+	user_num NUMBER PRIMARY KEY,       -- 유저번호
+        email VARCHAR2(30), --이메일
+        user_password VARCHAR2(40), -- 비밀번호
+        user_name VARCHAR2(10), --이름
+        chk_receive_email VARCHAR2(1), --이메일 수신여부
+        jumin VARCHAR2(20), --주민등록번호
+        phone VARCHAR2(20), --전화번호
+        addr VARCHAR2(80), --주소
+        grade VARCHAR2(10), --등급
+        join_date DATE, --가입일
+	phone_key VARCHAR2(1), --휴대폰 인증
+	login_time DATE --접속이력	
+);
+
+create table busi_user_list ( --<법인유저>
+	busi_num number primary key, --법인 유저 순서
+	busi_resi_num varchar2(20), --사업자 등록번호
+	busi_password varchar2(20), --사업자 비밀번호
+	com_name varchar2(10), --업체 명
+	presen_name varchar2(10), --대표자 명
+	cor_num varchar2(10), --법인 번호
+	hompage VARCHAR2(20), --홈페이지
+	address VARCHAR2(30), --주소
+	Pre_phone VARCHAR2(20), --대표자 번호
+	Fax_num VARCHAR2(20), --팩스 번호
+	Manager_name VARCHAR2(10), --담당자 명
+	Manager_birth VARCHAR2(10), --담당자 생년월일
+	Manager_email VARCHAR2(20), --담당자 이메일
+	Office_num VARCHAR2(10), --사무실 번호
+	Manager_phone VARCHAR2(10), --매니저 번호
+	Manager_fax_num VARCHAR2(20), --매니저 팩스번호
+	Manager_task VARCHAR2(10), --담당업무
+	Manager_rank VARCHAR2(10), --직급
+	Manager_depart VARCHAR2(10), --근무부서
+	Terms_of_service VARCHAR2(1), --이용약관
+	privacy_policy_agree VARCHAR2(1), --개인정보처리동의
+	join_date DATE --가입일
+);
+
+CREATE TABLE account( --<계좌>
+	account_num NUMBER PRIMARY KEY, --계좌순서
+	account_name VARCHAR2(10), --예금주
+	bank_name VARCHAR2(10) NOT NULL, --은행명
+	bank_num VARCHAR2(20) NOT NULL, --계좌번호
+	deposit VARCHAR2(30), --예치금
+	user_num NUMBER REFERENCES user_list(user_num) on delete cascade, --유저 번호
+	busi_num NUMBER REFERENCES busi_user_list(busi_num) on delete cascade --법인 유저 번호
+);
+
+CREATE TABLE    project_list ( --<프로젝트>
+        project_num NUMBER PRIMARY KEY, --프로젝트 번호
+	user_num NUMBER REFERENCES user_list(user_num) on delete cascade, --유저 번호
+        img VARCHAR2(60), --사진(경로)
+        project_name VARCHAR2(60), --이름
+	current_price VARCHAR2(30), --현재금액
+        price VARCHAR2(30), --목표금액
+	deadline VARCHAR2(30), --남은기간
+	ach_rate VARCHAR2(10), --달성률
+	customer VARCHAR2(20), --참가자
+	type VARCHAR2(10), --게임유형
+	genre VARCHAR2(10), --장르
+        more_information VARCHAR2(2000), --상세정보
+	en_date DATE, --등록날짜
+	busi_num NUMBER REFERENCES busi_user_list(busi_num) on delete cascade, --법인 유저 번호
+	rate VARCHAR2(10) --금리
+);
+
+CREATE TABLE guarantee ( --<담보>
+	guarantee_num NUMBER PRIMARY KEY, --담보순서
+	guarantee_type VARCHAR2(20) NOT NULL, --담보유형
+	guarantee_name VARCHAR2(30) NOT NULL, --담보이름
+	connoisseur VARCHAR2(30), --감정가
+	project_num NUMBER REFERENCES project_list(project_num) on delete cascade, --프로젝트 번호
+	area VARCHAR2(50), --면적
+	map VARCHAR2(50), --지도
+	location VARCHAR2(20), --소재지
+	scale VARCHAR2(10), --규모
+	comple_year VARCHAR2(10), --준공년도
+	quote VARCHAR2(20), --시세
+	code VARHCHAR2(1) --담보분류
+);
+
+CREATE TABLE loan_list ( --<대출>
+	loan_num NUMBER PRIMARY KEY --대출 번호
+	loan_price VARCHAR2(20), --대출 금액
+	user_num NUMBER REFERENCES user_list(user_num) on delete cascade, --유저 번호
+	loan_period VARCHAR2(10), --대출기간
+	loan_amount NUMBER(10), --대출금액
+	loan_class VARCHAR2(10), --대출구분
+	loan_purpose VARCHAR2(10), --대출목적
+	repay_method VARCHAR2(10) --상환방식
+	project_num NUMBER REFERENCES project_list(project_num) on delete cascade, --프로젝트 번호
+	busi_num NUMBER REFERENCES busi_user_list(busi_num) on delete cascade --법인 유저 번호
+);
+
+CREATE TABLE invest_list ( --<투자>
+	invest_num NUMBER PRIMARY KEY --투자 번호
+	invest_price VARCHAR2(20), --투자 금액
+	user_num NUMBER REFERENCES user_list(user_num) on delete cascade, --유저 번호
+	busi_num NUMBER REFERENCES busi_user_list(busi_num) on delete cascade, --법인 유저 번호
+	invest_date DATE, --투자일
+	project_num NUMBER REFERENCES project_list(project_num) on delete cascade, --프로젝트 번호
+	busi_num NUMBER REFERENCES busi_user_list(busi_num) on delete cascade --법인 유저 번호
+);
+
+CREATE TABLE notice ( --<공지사항>
+	notice_num NUMBER PRIMARY KEY --공지사항 번호
+	img VARCAHR2(60), --사진
+	notice_contents VARCHAR2(300), --공지사항 내용
+	notice_date DATE --등록날짜
+);
+CREATE TABLE note_list ( --<1:1문의>
+        note_num NUMBER PRIMARY KEY, --문의번호
+        note_type VARCHAR2(10), --타입(보낸문의,받은문의)
+        note_date DATE, --날짜
+        chk_note_reception VARCHAR2(1), --수신확인여부
+        note_contents VARCHAR2(600), --글
+        send_user_num NUMBER, --보낸 유저 번호
+        send_nickname VARCHAR2(40), --보낸 닉네임
+        note_title VARCHAR2(40), --제목
+	file_path VARCHAR2(100) --파일경로
+);
+
+CREATE TABLE document ( --<서류>
+	document_num NUMBER PRIMARY KEY, --서류순서
+	busi_regi VARCHAR2(20), --사업자등록증
+	jumin_chobon VARCHAR2(20), --주민등록초본
+	cer_ingam VARCHAR2(20), --인감증명서
+	cer_budong VARCHAR2(20), --부동산증명서
+	cer_dong VARCHAR2(20), --동산증명서
+	cer_income VARCHAR2(20), --소득금액증명원
+	cer_vat VARCHAR2(20), --부가가치세과세증명원
+	cer_other VARCHAR2(20), --기타증명서
+	copy_id VARCHAR2(20), --신분증 사본
+	copy_bankbook VARCHAR2(20), --통장 사본
+	chk_select VARCHAR2(1), --개인정보 선택적이용확인
+	project_num NUMBER REFERENCES project_list(project_num) on delete cascade --프로젝트 번호
+);
+
+CREATE TABLE inout ( --<투자자입출금>
+	inout_num NUMBER PRIMARY KEY, --입출금순서
+	input_history VARCHAR2(20), --입금내역
+	output_history VARCHAR2(20), --출금내역
+	account_num NUMBER REFERENCES account(account_num) on delete cascade --계좌 번호
+);
+
+CREATE TABLE repay_list ( --<상환내역>
+	repay_num NUMBER PRIMARY KEY, --상환순서
+	repay_history VARCHAR2(20), --상환내역
+	user_num NUMBER REFERENCES user_list(user_num) on delete cascade, --유저 번호
+	busi_num NUMBER REFERENCES busi_user_list(busi_num) on delete cascade --법인 유저 번호
+);
+
+CREATE TABLE judge ( --<심사>
+	judge_num NUMBER PRIMARY KEY, --심사순서
+	judge_success VARCHAR2(1), --심사성공여부
+	project_num NUMBER REFERENCES project_list(project_num) on delete cascade --프로젝트 번호
+);
