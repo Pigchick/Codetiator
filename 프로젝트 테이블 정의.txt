@@ -58,7 +58,7 @@ CREATE TABLE    project_list ( --<프로젝트>
         price VARCHAR2(30), --목표금액
 	deadline VARCHAR2(30), --남은기간
 	ach_rate VARCHAR2(10), --달성률
-	customer VARCHAR2(20), --참가자
+	customer VARCHAR2(20), --투자자수
 	type VARCHAR2(10), --게임유형
 	genre VARCHAR2(10), --장르
         more_information VARCHAR2(2000), --상세정보
@@ -108,6 +108,7 @@ CREATE TABLE invest_list ( --<투자>
 CREATE TABLE notice ( --<공지사항>
 	notice_num NUMBER PRIMARY KEY --공지사항 번호
 	img VARCAHR2(60), --사진
+	title VARCHAR2(20), --제목
 	notice_contents VARCHAR2(300), --공지사항 내용
 	notice_date DATE --등록날짜
 );
@@ -120,6 +121,7 @@ CREATE TABLE note_list ( --<1:1문의>
         send_user_num NUMBER, --보낸 유저 번호
         send_nickname VARCHAR2(40), --보낸 닉네임
         note_title VARCHAR2(40), --제목
+	status VARCHAR2(10), --처리상태
 	file_path VARCHAR2(100) --파일경로
 );
 
