@@ -1,165 +1,165 @@
 create table user_list ( 
-	user_num INT PRIMARY KEY       COMMENT "À¯Àú¹øÈ£"
-        ,email VARCHAR(30) COMMENT "ÀÌ¸ŞÀÏ"
-        ,user_password VARCHAR(40) COMMENT "ºñ¹Ğ¹øÈ£"
-        ,user_name VARCHAR(10) COMMENT "ÀÌ¸§"
-        ,chk_receive_email VARCHAR(1) COMMENT "ÀÌ¸ŞÀÏ ¼ö½Å¿©ºÎ"
-        ,jumin VARCHAR(20) COMMENT "ÁÖ¹Îµî·Ï¹øÈ£"
-        ,phone VARCHAR(20) COMMENT "ÀüÈ­¹øÈ£"
-        ,addr VARCHAR(80) COMMENT "ÁÖ¼Ò"
-        ,join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "°¡ÀÔÀÏ"
-	,phone_key VARCHAR(1) COMMENT "ÈŞ´ëÆù ÀÎÁõ"
-	,login_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "Á¢¼ÓÀÌ·Â"	
+	user_num INT PRIMARY KEY auto_increment COMMENT "ìœ ì €ë²ˆí˜¸"
+        ,email VARCHAR(30) COMMENT "ì´ë©”ì¼"
+        ,user_password VARCHAR(40) COMMENT "ë¹„ë°€ë²ˆí˜¸"
+        ,user_name VARCHAR(10) COMMENT "ì´ë¦„"
+        ,chk_receive_email VARCHAR(1) COMMENT "ì´ë©”ì¼ ìˆ˜ì‹ ì—¬ë¶€"
+        ,jumin VARCHAR(20) COMMENT "ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸"
+        ,phone VARCHAR(20) COMMENT "ì „í™”ë²ˆí˜¸"
+        ,addr VARCHAR(80) COMMENT "ì£¼ì†Œ"
+        ,join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "ê°€ì…ì¼"
+	,phone_key VARCHAR(1) COMMENT "íœ´ëŒ€í° ì¸ì¦"
+	,login_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "ì ‘ì†ì´ë ¥"	
 )
-COMMENT "<À¯Àú>";
+COMMENT "<ìœ ì €>";
 
 create table busi_user_list ( 
-	busi_num INT primary key COMMENT "¹ıÀÎ À¯Àú ¼ø¼­"
-	,busi_resi_num VARCHAR(20) COMMENT "»ç¾÷ÀÚ µî·Ï¹øÈ£"
-	,busi_password VARCHAR(20) COMMENT "»ç¾÷ÀÚ ºñ¹Ğ¹øÈ£"
-	,com_name VARCHAR(10) COMMENT "¾÷Ã¼ ¸í"
-	,presen_name VARCHAR(10) COMMENT "´ëÇ¥ÀÚ ¸í"
-	,cor_num VARCHAR(10) COMMENT "¹ıÀÎ ¹øÈ£"
-	,hompage VARCHAR(20) COMMENT "È¨ÆäÀÌÁö"
-	,address VARCHAR(30) COMMENT "ÁÖ¼Ò"
-	,Pre_phone VARCHAR(20) COMMENT "´ëÇ¥ÀÚ ¹øÈ£"
-	,Fax_num VARCHAR(20) COMMENT "ÆÑ½º ¹øÈ£"
-	,Manager_name VARCHAR(10) COMMENT "´ã´çÀÚ ¸í"
-	,Manager_birth VARCHAR(10) COMMENT "´ã´çÀÚ »ı³â¿ùÀÏ"
-	,Manager_email VARCHAR(20) COMMENT "´ã´çÀÚ ÀÌ¸ŞÀÏ"
-	,Office_num VARCHAR(10) COMMENT "»ç¹«½Ç ¹øÈ£"
-	,Manager_phone VARCHAR(10) COMMENT "¸Å´ÏÀú ¹øÈ£"
-	,Manager_fax_num VARCHAR(20) COMMENT "¸Å´ÏÀú ÆÑ½º¹øÈ£"
-	,Manager_task VARCHAR(10) COMMENT "´ã´ç¾÷¹«"
-	,Manager_rank VARCHAR(10) COMMENT "Á÷±Ş"
-	,Manager_depart VARCHAR(10) COMMENT "±Ù¹«ºÎ¼­"
-	,Terms_of_service VARCHAR(1) COMMENT "ÀÌ¿ë¾à°ü"
-	,privacy_policy_agree VARCHAR(1) COMMENT "°³ÀÎÁ¤º¸Ã³¸®µ¿ÀÇ"
-	,join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "°¡ÀÔÀÏ"
+	busi_num INT primary KEY auto_increment COMMENT "ë²•ì¸ ìœ ì € ìˆœì„œ"
+	,busi_resi_num VARCHAR(20) COMMENT "ì‚¬ì—…ì ë“±ë¡ë²ˆí˜¸"
+	,busi_password VARCHAR(20) COMMENT "ì‚¬ì—…ì ë¹„ë°€ë²ˆí˜¸"
+	,com_name VARCHAR(10) COMMENT "ì—…ì²´ ëª…"
+	,presen_name VARCHAR(10) COMMENT "ëŒ€í‘œì ëª…"
+	,cor_num VARCHAR(10) COMMENT "ë²•ì¸ ë²ˆí˜¸"
+	,homepage VARCHAR(20) COMMENT "í™ˆí˜ì´ì§€"
+	,address VARCHAR(30) COMMENT "ì£¼ì†Œ"
+	,Pre_phone VARCHAR(20) COMMENT "ëŒ€í‘œì ë²ˆí˜¸"
+	,Fax_num VARCHAR(20) COMMENT "íŒ©ìŠ¤ ë²ˆí˜¸"
+	,Manager_name VARCHAR(10) COMMENT "ë‹´ë‹¹ì ëª…"
+	,Manager_birth VARCHAR(10) COMMENT "ë‹´ë‹¹ì ìƒë…„ì›”ì¼"
+	,Manager_email VARCHAR(20) COMMENT "ë‹´ë‹¹ì ì´ë©”ì¼"
+	,Office_num VARCHAR(10) COMMENT "ì‚¬ë¬´ì‹¤ ë²ˆí˜¸"
+	,Manager_phone VARCHAR(10) COMMENT "ë§¤ë‹ˆì € ë²ˆí˜¸"
+	,Manager_fax_num VARCHAR(20) COMMENT "ë§¤ë‹ˆì € íŒ©ìŠ¤ë²ˆí˜¸"
+	,Manager_task VARCHAR(10) COMMENT "ë‹´ë‹¹ì—…ë¬´"
+	,Manager_rank VARCHAR(10) COMMENT "ì§ê¸‰"
+	,Manager_depart VARCHAR(10) COMMENT "ê·¼ë¬´ë¶€ì„œ"
+	,Terms_of_service VARCHAR(1) COMMENT "ì´ìš©ì•½ê´€"
+	,privacy_policy_agree VARCHAR(1) COMMENT "ê°œì¸ì •ë³´ì²˜ë¦¬ë™ì˜"
+	,join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "ê°€ì…ì¼"
 )
-COMMENT "<¹ıÀÎÀ¯Àú>";
+COMMENT "<ë²•ì¸ìœ ì €>";
 
 CREATE TABLE account(
-	account_num INT PRIMARY KEY COMMENT "°èÁÂ¼ø¼­"
-	,account_name VARCHAR(10) COMMENT "¿¹±İÁÖ"
-	,bank_name VARCHAR(10) NOT NULL COMMENT "ÀºÇà¸í"
-	,bank_num VARCHAR(20) NOT NULL COMMENT "°èÁÂ¹øÈ£"
-	,deposit VARCHAR(30) COMMENT "¿¹Ä¡±İ"
+	account_num INT PRIMARY KEY auto_increment COMMENT "ê³„ì¢Œìˆœì„œ"
+	,account_name VARCHAR(10) COMMENT "ì˜ˆê¸ˆì£¼"
+	,bank_name VARCHAR(10) NOT NULL COMMENT "ì€í–‰ëª…"
+	,bank_num VARCHAR(20) NOT NULL COMMENT "ê³„ì¢Œë²ˆí˜¸"
+	,deposit VARCHAR(30) COMMENT "ì˜ˆì¹˜ê¸ˆ"
 	,user_num INT REFERENCES user_list(user_num) on delete cascade
 	,busi_num INT REFERENCES busi_user_list(busi_num) on delete cascade
 )
-COMMENT "<°èÁÂ>"
+COMMENT "<ê³„ì¢Œ>"
 ;
 
 CREATE TABLE    project_list (
-        project_num INT PRIMARY KEY COMMENT "ÇÁ·ÎÁ§Æ® ¹øÈ£"
+        project_num INT PRIMARY KEY auto_increment COMMENT "í”„ë¡œì íŠ¸ ë²ˆí˜¸"
 	,loan_num INT REFERENCES loan_list(loan_num) on delete cascade
-        ,img VARCHAR(60) COMMENT "»çÁø(°æ·Î)"
-        ,project_name VARCHAR(60) COMMENT "ÀÌ¸§"
-	,current_price VARCHAR(30) COMMENT "ÇöÀç±İ¾×"
-        ,price VARCHAR(30) COMMENT "¸ñÇ¥±İ¾×"
-	,deadline VARCHAR(30) COMMENT "³²Àº±â°£"
-	,ach_rate VARCHAR(10) COMMENT "´Ş¼º·ü"
-	,customer VARCHAR(20) COMMENT "ÅõÀÚÀÚ¼ö"
-	,type VARCHAR(10) COMMENT "°ÔÀÓÀ¯Çü"
-	,genre VARCHAR(10) COMMENT "Àå¸£"
-	,yield VARCHAR(10) COMMENT "¼öÀÍ·ü"
-        ,grade VARCHAR(10) COMMENT "µî±Ş"
-        ,more_information VARCHAR(2000) COMMENT "»ó¼¼Á¤º¸"
-	,en_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "µî·Ï³¯Â¥"
-	,rate VARCHAR(10) COMMENT "±İ¸®"
-) COMMENT "<ÇÁ·ÎÁ§Æ®>";
+        ,img VARCHAR(60) COMMENT "ì‚¬ì§„(ê²½ë¡œ)"
+        ,project_name VARCHAR(60) COMMENT "ì´ë¦„"
+	,current_price VARCHAR(30) COMMENT "í˜„ì¬ê¸ˆì•¡"
+        ,price VARCHAR(30) COMMENT "ëª©í‘œê¸ˆì•¡"
+	,deadline VARCHAR(30) COMMENT "ë‚¨ì€ê¸°ê°„"
+	,ach_rate VARCHAR(10) COMMENT "ë‹¬ì„±ë¥ "
+	,customer VARCHAR(20) COMMENT "íˆ¬ìììˆ˜"
+	,type VARCHAR(10) COMMENT "ê²Œì„ìœ í˜•"
+	,genre VARCHAR(10) COMMENT "ì¥ë¥´"
+	,yield VARCHAR(10) COMMENT "ìˆ˜ìµë¥ "
+        ,grade VARCHAR(10) COMMENT "ë“±ê¸‰"
+        ,more_information VARCHAR(2000) COMMENT "ìƒì„¸ì •ë³´"
+	,en_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "ë“±ë¡ë‚ ì§œ"
+	,rate VARCHAR(10) COMMENT "ê¸ˆë¦¬"
+) COMMENT "<í”„ë¡œì íŠ¸>";
 
 CREATE TABLE guarantee (
-	guarantee_num INT PRIMARY KEY COMMENT "´ãº¸¼ø¼­"
-	,guarantee_type VARCHAR(20) NOT NULL COMMENT "´ãº¸À¯Çü"
-	,guarantee_name VARCHAR(30) NOT NULL COMMENT "´ãº¸ÀÌ¸§"
-	,connoisseur VARCHAR(30) COMMENT "°¨Á¤°¡"
+	guarantee_num INT PRIMARY KEY auto_increment COMMENT "ë‹´ë³´ìˆœì„œ"
+	,guarantee_type VARCHAR(20) NOT NULL COMMENT "ë‹´ë³´ìœ í˜•"
+	,guarantee_name VARCHAR(30) NOT NULL COMMENT "ë‹´ë³´ì´ë¦„"
+	,connoisseur VARCHAR(30) COMMENT "ê°ì •ê°€"
 	,loan_num INT REFERENCES loan_list(loan_num) on delete cascade
-	,area VARCHAR(50) COMMENT "¸éÀû"
-	,map VARCHAR(50) COMMENT "Áöµµ"
-	,location VARCHAR(20) COMMENT "¼ÒÀçÁö"
-	,scale VARCHAR(10) COMMENT "±Ô¸ğ"
-	,comple_year VARCHAR(10) COMMENT "ÁØ°ø³âµµ"
-	,quote VARCHAR(20) COMMENT "½Ã¼¼"
-	,code VARCHAR(1) COMMENT "´ãº¸ºĞ·ù"
-) COMMENT "<´ãº¸>";
+	,area VARCHAR(50) COMMENT "ë©´ì "
+	,map VARCHAR(50) COMMENT "ì§€ë„"
+	,location VARCHAR(20) COMMENT "ì†Œì¬ì§€"
+	,scale VARCHAR(10) COMMENT "ê·œëª¨"
+	,comple_year VARCHAR(10) COMMENT "ì¤€ê³µë…„ë„"
+	,quote VARCHAR(20) COMMENT "ì‹œì„¸"
+	,code VARCHAR(1) COMMENT "ë‹´ë³´ë¶„ë¥˜"
+) COMMENT "<ë‹´ë³´>";
 
 CREATE TABLE loan_list (
-	loan_num INT PRIMARY KEY COMMENT "´ëÃâ ¹øÈ£"
-	,loan_price VARCHAR(20) COMMENT "´ëÃâ ±İ¾×"
+	loan_num INT PRIMARY KEY auto_increment COMMENT "ëŒ€ì¶œ ë²ˆí˜¸"
+	,loan_price VARCHAR(20) COMMENT "ëŒ€ì¶œ ê¸ˆì•¡"
 	,user_num INT REFERENCES user_list(user_num) on delete cascade
-	,loan_period VARCHAR(10) COMMENT "´ëÃâ±â°£"
-	,loan_amount INT(10) COMMENT "´ëÃâ±İ¾×"
-	,loan_class VARCHAR(10) COMMENT "´ëÃâ±¸ºĞ"
-	,loan_purpose VARCHAR(10) COMMENT "´ëÃâ¸ñÀû"
-	,repay_method VARCHAR(10) COMMENT "»óÈ¯¹æ½Ä"
+	,loan_period VARCHAR(10) COMMENT "ëŒ€ì¶œê¸°ê°„"
+	,loan_amount INT(10) COMMENT "ëŒ€ì¶œê¸ˆì•¡"
+	,loan_class VARCHAR(10) COMMENT "ëŒ€ì¶œêµ¬ë¶„"
+	,loan_purpose VARCHAR(10) COMMENT "ëŒ€ì¶œëª©ì "
+	,repay_method VARCHAR(10) COMMENT "ìƒí™˜ë°©ì‹"
 	,busi_num INT REFERENCES busi_user_list(busi_num) on delete cascade
-) COMMENT "<´ëÃâ>";
+) COMMENT "<ëŒ€ì¶œ>";
 
 CREATE TABLE invest_list (
-	invest_num INT PRIMARY KEY COMMENT "ÅõÀÚ ¹øÈ£"
-	,invest_price VARCHAR(20) COMMENT "ÅõÀÚ ±İ¾×"
+	invest_num INT PRIMARY KEY auto_increment COMMENT "íˆ¬ì ë²ˆí˜¸"
+	,invest_price VARCHAR(20) COMMENT "íˆ¬ì ê¸ˆì•¡"
 	,user_num INT REFERENCES user_list(user_num) on delete cascade
 	,busi_num INT REFERENCES busi_user_list(busi_num) on delete cascade
-	,invest_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "ÅõÀÚÀÏ"
+	,invest_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "íˆ¬ìì¼"
 	,project_num INT REFERENCES project_list(project_num) on delete cascade
-) COMMENT "<ÅõÀÚ>";
+) COMMENT "<íˆ¬ì>";
 
 CREATE TABLE notice (
-	notice_num INT PRIMARY KEY COMMENT "°øÁö»çÇ× ¹øÈ£"
-	,img VARCHAR(60) COMMENT "»çÁø"
-	,title VARCHAR(20) COMMENT "Á¦¸ñ"
-	,notice_contents VARCHAR(300) COMMENT "°øÁö»çÇ× ³»¿ë"
-	,notice_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "µî·Ï³¯Â¥"
-) COMMENT "<°øÁö»çÇ×>";
+	notice_num INT PRIMARY KEY COMMENT "ê³µì§€ì‚¬í•­ ë²ˆí˜¸"
+	,img VARCHAR(60) COMMENT "ì‚¬ì§„"
+	,title VARCHAR(20) COMMENT "ì œëª©"
+	,notice_contents VARCHAR(300) COMMENT "ê³µì§€ì‚¬í•­ ë‚´ìš©"
+	,notice_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "ë“±ë¡ë‚ ì§œ"
+) COMMENT "<ê³µì§€ì‚¬í•­>";
 
 CREATE TABLE note_list (
-        note_num INT PRIMARY KEY COMMENT "¹®ÀÇ¹øÈ£"
-        ,note_type VARCHAR(10) COMMENT "Å¸ÀÔ(º¸³½¹®ÀÇ¹ŞÀº¹®ÀÇ)"
-        ,note_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "³¯Â¥"
-        ,chk_note_reception VARCHAR(1) COMMENT "¼ö½ÅÈ®ÀÎ¿©ºÎ"
-        ,note_contents VARCHAR(600) COMMENT "±Û"
-        ,send_user_num INT COMMENT "º¸³½ À¯Àú ¹øÈ£"
-        ,send_nickname VARCHAR(40) COMMENT "º¸³½ ´Ğ³×ÀÓ"
-        ,note_title VARCHAR(40) COMMENT "Á¦¸ñ"
-	,status VARCHAR(10) COMMENT "Ã³¸®»óÅÂ"
-	,file_path VARCHAR(100) COMMENT "ÆÄÀÏ°æ·Î"
-) COMMENT "<1:1¹®ÀÇ>";
+        note_num INT PRIMARY KEY auto_increment COMMENT "ë¬¸ì˜ë²ˆí˜¸"
+        ,note_type VARCHAR(10) COMMENT "íƒ€ì…(ë³´ë‚¸ë¬¸ì˜ë°›ì€ë¬¸ì˜)"
+        ,note_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT "ë‚ ì§œ"
+        ,chk_note_reception VARCHAR(1) COMMENT "ìˆ˜ì‹ í™•ì¸ì—¬ë¶€"
+        ,note_contents VARCHAR(600) COMMENT "ê¸€"
+        ,send_user_num INT COMMENT "ë³´ë‚¸ ìœ ì € ë²ˆí˜¸"
+        ,send_nickname VARCHAR(40) COMMENT "ë³´ë‚¸ ë‹‰ë„¤ì„"
+        ,note_title VARCHAR(40) COMMENT "ì œëª©"
+	,status VARCHAR(10) COMMENT "ì²˜ë¦¬ìƒíƒœ"
+	,file_path VARCHAR(100) COMMENT "íŒŒì¼ê²½ë¡œ"
+) COMMENT "<1:1ë¬¸ì˜>";
 
 CREATE TABLE document (
-	document_num INT PRIMARY KEY COMMENT "¼­·ù¼ø¼­"
-	,busi_regi VARCHAR(20) COMMENT "»ç¾÷ÀÚµî·ÏÁõ"
-	,jumin_chobon VARCHAR(20) COMMENT "ÁÖ¹Îµî·ÏÃÊº»"
-	,cer_ingam VARCHAR(20) COMMENT "ÀÎ°¨Áõ¸í¼­"
-	,cer_budong VARCHAR(20) COMMENT "ºÎµ¿»êÁõ¸í¼­"
-	,cer_dong VARCHAR(20) COMMENT "µ¿»êÁõ¸í¼­"
-	,cer_income VARCHAR(20) COMMENT "¼Òµæ±İ¾×Áõ¸í¿ø"
-	,cer_vat VARCHAR(20) COMMENT "ºÎ°¡°¡Ä¡¼¼°ú¼¼Áõ¸í¿ø"
-	,cer_other VARCHAR(20) COMMENT "±âÅ¸Áõ¸í¼­"
-	,copy_id VARCHAR(20) COMMENT "½ÅºĞÁõ »çº»"
-	,copy_bankbook VARCHAR(20) COMMENT "ÅëÀå »çº»"
-	,chk_select VARCHAR(1) COMMENT "°³ÀÎÁ¤º¸ ¼±ÅÃÀûÀÌ¿ëÈ®ÀÎ"
+	document_num INT PRIMARY KEY auto_increment COMMENT "ì„œë¥˜ìˆœì„œ"
+	,busi_regi VARCHAR(20) COMMENT "ì‚¬ì—…ìë“±ë¡ì¦"
+	,jumin_chobon VARCHAR(20) COMMENT "ì£¼ë¯¼ë“±ë¡ì´ˆë³¸"
+	,cer_ingam VARCHAR(20) COMMENT "ì¸ê°ì¦ëª…ì„œ"
+	,cer_budong VARCHAR(20) COMMENT "ë¶€ë™ì‚°ì¦ëª…ì„œ"
+	,cer_dong VARCHAR(20) COMMENT "ë™ì‚°ì¦ëª…ì„œ"
+	,cer_income VARCHAR(20) COMMENT "ì†Œë“ê¸ˆì•¡ì¦ëª…ì›"
+	,cer_vat VARCHAR(20) COMMENT "ë¶€ê°€ê°€ì¹˜ì„¸ê³¼ì„¸ì¦ëª…ì›"
+	,cer_other VARCHAR(20) COMMENT "ê¸°íƒ€ì¦ëª…ì„œ"
+	,copy_id VARCHAR(20) COMMENT "ì‹ ë¶„ì¦ ì‚¬ë³¸"
+	,copy_bankbook VARCHAR(20) COMMENT "í†µì¥ ì‚¬ë³¸"
+	,chk_select VARCHAR(1) COMMENT "ê°œì¸ì •ë³´ ì„ íƒì ì´ìš©í™•ì¸"
 	,loan_num INT REFERENCES loan_list(loan_num) on delete cascade
-) COMMENT "<¼­·ù>";
+) COMMENT "<ì„œë¥˜>";
 
 CREATE TABLE in_out (
-	in_out_num INT PRIMARY KEY COMMENT "ÀÔÃâ±İ¼ø¼­"
-	,input_history VARCHAR(20) COMMENT "ÀÔ±İ³»¿ª"
-	,output_history VARCHAR(20) COMMENT "Ãâ±İ³»¿ª"
+	in_out_num INT PRIMARY KEY auto_increment COMMENT "ì…ì¶œê¸ˆìˆœì„œ"
+	,input_history VARCHAR(20) COMMENT "ì…ê¸ˆë‚´ì—­"
+	,output_history VARCHAR(20) COMMENT "ì¶œê¸ˆë‚´ì—­"
 	,account_num INT REFERENCES account(account_num) on delete cascade
-) COMMENT "<ÅõÀÚÀÚÀÔÃâ±İ>";
+) COMMENT "<íˆ¬ììì…ì¶œê¸ˆ>";
 
 CREATE TABLE repay_list (
-	repay_num INT PRIMARY KEY COMMENT "»óÈ¯¼ø¼­"
-	,invest_history VARCHAR(20) COMMENT "ÅõÀÚÀÚ »óÈ¯³»¿ª"
-	,loan_history VARCHAR(20) COMMENT "´ëÃâÀÚ »óÈ¯³»¿ª"
+	repay_num INT PRIMARY KEY auto_increment COMMENT "ìƒí™˜ìˆœì„œ"
+	,invest_history VARCHAR(20) COMMENT "íˆ¬ìì ìƒí™˜ë‚´ì—­"
+	,loan_history VARCHAR(20) COMMENT "ëŒ€ì¶œì ìƒí™˜ë‚´ì—­"
 	,user_num INT REFERENCES user_list(user_num) on delete cascade
 	,busi_num INT REFERENCES busi_user_list(busi_num) on delete cascade
-) COMMENT "<»óÈ¯³»¿ª>";
+) COMMENT "<ìƒí™˜ë‚´ì—­>";
 
 CREATE TABLE judge (
-	judge_num INT PRIMARY KEY COMMENT "½É»ç¼ø¼­"
-	,judge_success VARCHAR(1) COMMENT "½É»ç¼º°ø¿©ºÎ"
+	judge_num INT PRIMARY KEY  auto_increment COMMENT "ì‹¬ì‚¬ìˆœì„œ"
+	,judge_success VARCHAR(1) COMMENT "ì‹¬ì‚¬ì„±ê³µì—¬ë¶€"
 	,loan_num INT REFERENCES loan_list(loan_num) on delete cascade
-) COMMENT "<½É»ç>";
+) COMMENT "<ì‹¬ì‚¬>";
