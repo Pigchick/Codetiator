@@ -16,7 +16,6 @@ $(document).ready(function() {
 			,{
 				user_name:$("#user_name").val(),
 				phone:$("#phone").val()
-				
 			}//data
 			,function(data,status) {
 				if(status == "success") {
